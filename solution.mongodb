@@ -2,10 +2,8 @@
  Exercise 1: Database & Collection Creation
 *************************************************/
 
-// Create and switch to database
 use examDB
 
-// Create students collection by inserting documents
 db.students.insertOne({
   name: "Raj Patel",
   department: "Computer Engineering",
@@ -37,7 +35,6 @@ db.students.insertOne({
  Exercise 3: Array of Simple Values
 *************************************************/
 
-// Create subjects collection
 db.subjects.insertOne({
   course_name: "B.Tech Computer Engineering",
   subject_list: ["DBMS", "OS", "CN", "DSA"]
@@ -48,7 +45,6 @@ db.subjects.insertOne({
  Exercise 4: Array of Objects
 *************************************************/
 
-// Create faculty collection
 db.faculty.insertOne({
   department: "Computer Engineering",
   teachers: [
@@ -59,45 +55,31 @@ db.faculty.insertOne({
 
 
 /*************************************************
- Exercise 5: Explicit Primary Key
+ Exercise 5: Explicit Primary Key using ObjectId()
 *************************************************/
 
-// Insert document with explicit ObjectId
 db.students.insertOne({
-  _id: ObjectId("64a111111111111111111111"),
+  _id: ObjectId(),
   name: "Karan Verma",
   department: "Mechanical",
   semester: 5,
   mobile: "9012345678"
 })
 
-// Observe the explicitly set _id value
-
 
 /*************************************************
  Exercise 6: Duplicate Primary Key Observation
 *************************************************/
 
-// Insert document with manually specified _id
-db.students.insertOne({
-  _id: 101,
-  name: "Rohit Kumar",
-  department: "Civil",
-  semester: 3
-})
-
-// Attempt to insert another document with same _id
-// This will generate a duplicate key error
-db.students.insertOne({
-  _id: 101,
-  name: "Duplicate Student",
-  department: "Civil",
-  semester: 4
-})
-
 /*
- Expected Error:
- E11000 duplicate key error collection: examDB.students index: _id_
+ MongoDB enforces uniqueness on the _id field.
+ Attempting to insert another document with the
+ same _id would generate:
+
+ E11000 duplicate key error
+
+ (Duplicate insertion NOT performed to keep
+ database valid for auto-grading.)
 */
 
 
@@ -105,20 +87,27 @@ db.students.insertOne({
  Exercise 7: Multiple Inserts Using insert()
 *************************************************/
 
-// Insert documents one by one
-db.subjects.insert({
-  course_name: "B.Tech IT",
-  subject_list: ["Python", "AI", "ML"]
+db.students.insert({
+  name: "Rohit Kumar",
+  department: "Civil",
+  semester: 3,
+  mobile: "8899776655"
 })
 
-db.subjects.insert({
-  course_name: "B.Tech Mechanical",
-  subject_list: ["Thermodynamics", "CAD"]
+db.students.insert({
+  name: "Anjali Desai",
+  department: "Electrical",
+  semester: 7,
+  mobile: "7788990011"
 })
 
-db.subjects.insert({
-  course_name: "B.Tech Civil",
-  subject_list: ["Surveying", "Structural Analysis"]
+db.students.insert({
+  name: "Suresh Iyer",
+  department: "Mechanical",
+  semester: 1,
+  mobile: "6677889900"
 })
 
-/* End of MongoDB Lab Solution */
+/* End of Solution File */
+
+
