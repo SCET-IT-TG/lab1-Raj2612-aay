@@ -1,117 +1,94 @@
 // select database
 db=db.getSiblingDB("examDB");
 
-/*************************************************
- Exercise 1: Database & Collection Creation
-*************************************************/
-
-use examDB
-
+// Exercise 1
 db.students.insertOne({
-  name: "Raj Patel",
-  department: "Computer Engineering",
-  semester: 6,
+  name: "Rahul Sharma",
+  department: "Computer Science",
+  semester: 5,
   mobile: 9876543210
 })
-
 db.students.insertOne({
-  name: "Amit Shah",
+  name: "Anita Verma",
   department: "Information Technology",
-  semester: 4,
+  semester: 3,
   mobile: 9123456780
 })
 
-
-/*************************************************
- Exercise 2: Insert Document with Multiple Fields
-*************************************************/
+// Exercise 2: Insert Document with Multiple Fields
 
 db.students.insertOne({
-  name: "Neha Sharma",
-  department: "Electronics",
-  semester: 2,
+  name: "Mohit Kumar",
+  department: "Mechanical",
+  semester: 6,
   mobile: 9988776655
 })
 
-
-/*************************************************
- Exercise 3: Array of Simple Values
-*************************************************/
+//Exercise 3: Array of Simple Values
 
 db.subjects.insertOne({
-  course_name: "B.Tech Computer Engineering",
-  subject_list: ["DBMS", "OS", "CN", "DSA"]
+  course_name: "B.Tech Computer Science",
+  subject_list: ["Data Structures", "DBMS", "Operating System", "Networking"]
 })
 
-
-/*************************************************
- Exercise 4: Array of Objects
-*************************************************/
+//Exercise 4: Array of Objects
 
 db.faculty.insertOne({
-  department: "Computer Engineering",
+  department: "Computer Science",
   teachers: [
-    { name: "Dr. Mehta", experience: 12 },
-    { name: "Prof. Sharma", experience: 8 }
+    { name: "Dr. Singh", experience: 10 },
+    { name: "Ms. Gupta", experience: 6 }
   ]
 })
 
-
-/*************************************************
- Exercise 5: Explicit Primary Key using ObjectId()
-*************************************************/
+//Exercise 5: Explicit Primary Key
 
 db.students.insertOne({
   _id: ObjectId(),
-  name: "Karan Verma",
-  department: "Mechanical",
-  semester: 5,
-  mobile: 9012345678
-})
-
-
-/*************************************************
- Exercise 6: Duplicate Primary Key Observation
-*************************************************/
-
-/*
- MongoDB enforces uniqueness on the _id field.
- Attempting to insert another document with the
- same _id would generate:
-
- E11000 duplicate key error
-
- (Duplicate insertion NOT performed to keep
- database valid for auto-grading.)
-*/
-
-
-/*************************************************
- Exercise 7: Multiple Inserts Using insert()
-*************************************************/
-
-db.students.insert({
-  name: "Rohit Kumar",
+  name: "Suresh Patel",
   department: "Civil",
-  semester: 3,
-  mobile: 8899776655
+  semester: 4,
+  mobile: 9001122334
 })
 
-db.students.insert({
-  name: "Anjali Desai",
+//Exercise 6: Duplicate Primary Key Observation
+
+db.students.insertOne({
+  _id: 101,
+  name: "Ravi Mehta",
   department: "Electrical",
-  semester: 7,
-  mobile: 7788990011
+  semester: 2,
+  mobile: 9554433221
 })
 
-db.students.insert({
-  name: "Suresh Iyer",
-  department: "Mechanical",
+db.students.insertOne({
+  _id: 101,
+  name: "Amit Jain",
+  department: "Electronics",
   semester: 1,
-  mobile: 6677889900
+  mobile: 9112233445
 })
 
-/* End of Solution File */
+
+//Exercise 7: Multiple Inserts Using insert()
+
+db.subjects.insert({
+  course_name: "BCA",
+  subject_list: ["C Programming", "Maths"]
+})
+
+db.subjects.insert({
+  course_name: "MCA",
+  subject_list: ["Java", "Web Development"]
+})
+
+db.subjects.insert({
+  course_name: "MBA",
+  subject_list: ["Marketing", "Finance", "HR"]
+
+})
+
+
 
 
 
