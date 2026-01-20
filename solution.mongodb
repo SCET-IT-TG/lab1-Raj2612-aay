@@ -1,3 +1,6 @@
+// select database
+db=db.getSiblingDB("examDB");
+
 /*************************************************
  Exercise 1: Database & Collection Creation
 *************************************************/
@@ -8,14 +11,14 @@ db.students.insertOne({
   name: "Raj Patel",
   department: "Computer Engineering",
   semester: 6,
-  mobile: "9876543210"
+  mobile: 9876543210
 })
 
 db.students.insertOne({
   name: "Amit Shah",
   department: "Information Technology",
   semester: 4,
-  mobile: "9123456780"
+  mobile: 9123456780
 })
 
 
@@ -27,7 +30,7 @@ db.students.insertOne({
   name: "Neha Sharma",
   department: "Electronics",
   semester: 2,
-  mobile: "9988776655"
+  mobile: 9988776655
 })
 
 
@@ -63,7 +66,7 @@ db.students.insertOne({
   name: "Karan Verma",
   department: "Mechanical",
   semester: 5,
-  mobile: "9012345678"
+  mobile: 9012345678
 })
 
 
@@ -91,23 +94,24 @@ db.students.insert({
   name: "Rohit Kumar",
   department: "Civil",
   semester: 3,
-  mobile: "8899776655"
+  mobile: 8899776655
 })
 
 db.students.insert({
   name: "Anjali Desai",
   department: "Electrical",
   semester: 7,
-  mobile: "7788990011"
+  mobile: 7788990011
 })
 
 db.students.insert({
   name: "Suresh Iyer",
   department: "Mechanical",
   semester: 1,
-  mobile: "6677889900"
+  mobile: 6677889900
 })
 
 /* End of Solution File */
+
 
 
